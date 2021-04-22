@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkBetony", "FrameworkBetony\FrameworkBetony.csproj", "{1CBFC15E-1D54-4E1C-B12B-6633812386FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBetoniarnia", "TestBetoniarnia\TestBetoniarnia.csproj", "{67FC26C9-0339-4528-80B3-6E2DDFAB7EA9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CBFC15E-1D54-4E1C-B12B-6633812386FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBFC15E-1D54-4E1C-B12B-6633812386FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBFC15E-1D54-4E1C-B12B-6633812386FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBFC15E-1D54-4E1C-B12B-6633812386FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FC26C9-0339-4528-80B3-6E2DDFAB7EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67FC26C9-0339-4528-80B3-6E2DDFAB7EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67FC26C9-0339-4528-80B3-6E2DDFAB7EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67FC26C9-0339-4528-80B3-6E2DDFAB7EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED635709-19AB-4326-BC1D-7C502BE8498F}
+	EndGlobalSection
+EndGlobal
