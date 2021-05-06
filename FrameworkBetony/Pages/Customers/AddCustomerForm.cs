@@ -1,4 +1,4 @@
-﻿using FrameworkBetony.Model.Customer;
+using FrameworkBetony.Model.Customer;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -15,7 +15,8 @@ namespace FrameworkBetony.Pages.AddCustomerForm
         public AddCustomerForm(IWebDriver driver, WebDriverWait wait) : base(driver, wait) { }
         private IWebElement companyName => driver.FindElement(By.Id("mat-input-6"));
         private IWebElement shortCompanyName => driver.FindElement(By.Id("mat-input-7"));
-        private IWebElement nip => driver.FindElement(By.Id("mat-input-8"));
+        private IWebElement nip => driver.FindElement(By.Id("mat-input-9"));
+        private IWebElement uniqueShortcut => driver.FindElement(By.Id("mat-input-8"));
         private IWebElement city => driver.FindElement(By.Id("mat-input-1"));
         private IWebElement address => driver.FindElement(By.Id("mat-input-2"));
         private IWebElement postalCode => driver.FindElement(By.Id("mat-input-3"));
@@ -31,6 +32,7 @@ namespace FrameworkBetony.Pages.AddCustomerForm
         {
             companyName.SendKeys(customer.companyName);
             shortCompanyName.SendKeys(customer.shortCompanyName);
+            uniqueShortcut.SendKeys(customer.uniqueShortcut);
             nip.SendKeys(customer.nip);
             city.SendKeys(customer.city);
             address.SendKeys(customer.address);
