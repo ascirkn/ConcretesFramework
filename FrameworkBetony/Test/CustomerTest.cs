@@ -17,8 +17,9 @@ namespace FrameworkBetony.Test
     {
         internal static Customer customer = new Customer
         {
-            companyName = "firmaAnnn",
-            shortCompanyName = "Annn",
+            companyName = "firmaaAbc",
+            shortCompanyName = "Abc",
+            uniqueShortcut = "FFF",
             nip = "9514498124",
             city = "Kielce",
             address = "Kielecka 33/3",

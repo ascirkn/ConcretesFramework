@@ -48,6 +48,8 @@ namespace FrameworkBetony.Pages
         private IWebElement Kierowca => wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-option-text' and contains(text(),'Kierowca')]")));
         private IWebElement Sprzedawca => wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-option-text' and contains(text(),'Sprzedawca')]")));
         private IWebElement Wezlowy => wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-option-text' and contains(text(),'Węzłowy')]")));
+        //private IWebElement SearchInput => wait.Until(ElementToBeClickable(By.Id("mat-input-0")));
+        private IWebElement SearchInput => wait.Until(ElementToBeClickable(By.XPath("/html/body/app-maestro-app/app-authorised-layout/div/mat-sidenav-container/mat-sidenav-content/div[2]/app-employees-catalog/div/div/div/mat-card/mat-card-subtitle/mat-form-field/div/div[1]/div[2]/input")));
         internal void GoToAddUser()
         {
             Users.Click();
@@ -123,7 +125,7 @@ namespace FrameworkBetony.Pages
         }
         internal void expandRecords()
         {
-            wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-select-arrow ng-tns-c214-117']"))).Click();
+            wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-select-value ng-tns-c214-61']"))).Click();
             wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-option-text' and contains(text(),'100')]"))).Click();
 
         }
@@ -131,6 +133,7 @@ namespace FrameworkBetony.Pages
         {
             IWebElement query = wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + delQuery + "')]//following-sibling::td[@class = 'mat-cell cdk-cell cdk-column-actions mat-column-actions ng-star-inserted']//mat-icon[@class = 'mat-icon notranslate red material-icons mat-icon-no-color']")));
             query.Click();
+            
             confirmDelButton.Click();
             //path to delete choosen user
             //driver.FindElement(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']/[@class='mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'aa@aa.pl')]/following-sibling::[@class='mat-cell cdk-cell cdk-column-actions mat-column-actions ng-star-inserted']/[@class='mat-icon notranslate green material-icons mat-icon-no-color']"));
@@ -159,14 +162,21 @@ namespace FrameworkBetony.Pages
             IWebElement query = wait.Until(ElementIsVisible(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + delQuery + "')]//following-sibling::td[@class = 'mat-cell cdk-cell cdk-column-actions mat-column-actions ng-star-inserted']//mat-icon[@class = 'mat-icon notranslate red material-icons mat-icon-no-color']")));
             if (query.Displayed)
             {
-                return true;
+                return true; 
             }
             else
             {
                 return false;
             }
         }
-    }
+        internal void search(string query)
+        {
+            
+            SearchInput.Click();
+            SearchInput.Clear();
+            SearchInput.SendKeys(query);
 
+        }
+    }
 
 }

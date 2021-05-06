@@ -54,10 +54,10 @@ namespace FrameworkBetony.Test
             var usersPage = new AddUserForm(driver, wait);
             usersPage.GoToAddUser();
             usersPage.FillOutForm(ania);
+            usersPage.search("ania@gmail.pl");
 
-
-            // show 100 record and after assert areequal
-            usersPage.expandRecords();
+            // show 100 records and after assert areequal
+            //usersPage.expandRecords();
 
             bool isAdded = usersPage.isAdded(ania.email);
             Assert.IsTrue(isAdded, "User isn't avaliable.");
@@ -73,7 +73,9 @@ namespace FrameworkBetony.Test
             var usersPage = new AddUserForm(driver, wait);
             usersPage.GoToUsers();
 
-            usersPage.expandRecords();
+            usersPage.search(ania.email);
+            //usersPage.expandRecords();
+
             usersPage.deleteUser("ania@gmail.pl");
 
             bool isDeleted = usersPage.IsUserDeleted("ania@gmail.pl");
@@ -89,8 +91,12 @@ namespace FrameworkBetony.Test
 
             var usersPage = new EditUserForm(driver, wait);
             usersPage.GoToUsers();
-            usersPage.editUser();
+            usersPage.expandRecords();
+            usersPage.editUserr(ania.email);
             usersPage.reFillOutForm(Jan);
+
+            bool isEdited = usersPage.isUserEdited(ania.email);
+            Assert.IsTrue(isEdited, "User isn't edited.");
             // assert if Jan is same as user in table
 
         }

@@ -13,6 +13,7 @@ namespace FrameworkBetony.Model.Customer
         internal string shortCompanyName { get; set; }
         internal string city { get; set; }
         internal string address { get; set; }
+        internal string uniqueShortcut { get; set; }
         internal string postalCode { get; set; }
         internal string number { get; set; }
         internal string merchantLimit { get; set; }

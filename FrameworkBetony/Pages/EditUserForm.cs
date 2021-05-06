@@ -27,6 +27,7 @@ namespace FrameworkBetony.Pages
         private IWebElement Users => wait.Until(ElementToBeClickable(By.XPath("//a[@href='#/authorised/employees/catalog']")));
         private IWebElement editButton => wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-icon notranslate green material-icons mat-icon-no-color']")));
         private IWebElement saveUser => wait.Until(ElementToBeClickable(By.XPath("//*[@class='btn btn-success']")));
+        private IWebElement SaveEditedUser => wait.Until(ElementToBeClickable(By.XPath("//*[@class='btn btn-success']")));
         private IWebElement editPassword => wait.Until(ElementToBeClickable(By.XPath("//*[@class='btn btn-primary ng-star-inserted']")));
         private IWebElement PasswordField => wait.Until(ElementIsVisible(By.Id("mat-input-6")));
         private IWebElement RePasswordField => wait.Until(ElementIsVisible(By.Id("mat-input-7")));
@@ -39,12 +40,23 @@ namespace FrameworkBetony.Pages
         {
             editButton.Click();
         }
+        internal void editUserr(string EditQuery)
+        {
+            IWebElement query = wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + EditQuery + "')]//following-sibling::td[@class = 'mat-cell cdk-cell cdk-column-actions mat-column-actions ng-star-inserted']//mat-icon[@class = 'mat-icon notranslate green material-icons mat-icon-no-color']")));
+            query.Click();
+           
+        }
         internal void reFillOutForm(User user)
         {
+            nameField.Clear();
             nameField.SendKeys(user.nameField);
+            FirstNameField.Clear();
             FirstNameField.SendKeys(user.FirstNameField);
+            secondNameField.Clear();
             secondNameField.SendKeys(user.secondNameField);
+            email.Clear();
             email.SendKeys(user.email);
+            number.Clear();
             number.SendKeys(user.number);
             roles.Click();
             choosenRoles.Click();
@@ -77,6 +89,18 @@ namespace FrameworkBetony.Pages
             IWebElement query = wait.Until(ElementToBeClickable(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + editQuery + "')]//following-sibling::td[@class = 'mat-cell cdk-cell cdk-column-actions mat-column-actions ng-star-inserted']//mat-icon[@class = 'mat-icon notranslate green material-icons mat-icon-no-color']")));
             query.Click();
             editPassword.Click();
+        }
+        internal bool isUserEdited(string editQuery)
+        {
+            IWebElement query = driver.FindElement(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + editQuery + "')]"));
+            if (!query.Displayed)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
