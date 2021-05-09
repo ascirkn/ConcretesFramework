@@ -14,5 +14,6 @@ namespace FrameworkBetony.Model.Order
         internal string customer { get; set; }
         public Payment PaymentMethod { get; set; }
         internal Merchandise MerchandiseType { get; set; }
+        public Status StatusType { get; set; }
     }
 }
