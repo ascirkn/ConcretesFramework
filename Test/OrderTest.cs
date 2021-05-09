@@ -25,7 +25,10 @@ namespace FrameworkBetony.Test
             PaymentMethod = Payment.Gotowka,
             MerchandiseType = Merchandise.Naturalne
         };
-
+        internal static Order status = new Order
+        {
+            StatusType = Status.Oferta
+        };
         [TestMethod]
         [Description("Checks if new order is added.")]
         public void AddOrder()
@@ -47,6 +50,9 @@ namespace FrameworkBetony.Test
             loginPage.GoTo();
             loginPage.SignUp(myLogin, myPassword);
 
+            var ChangeOrderPage = new ChangeOrderStatus(driver, wait);
+            ChangeOrderPage.GoToOrders();
+            ChangeOrderPage.ChooseStatus(status);
 
         }
     }
