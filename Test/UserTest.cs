@@ -73,10 +73,10 @@ namespace FrameworkBetony.Test
             var usersPage = new AddUserForm(driver, wait);
             usersPage.GoToUsers();
             //usersPage.expandRecords();
-            usersPage.search("ania@gmail.pl");
-            usersPage.DeleteUser("ania@gmail.pl");
+            usersPage.search(Jan.email);
+            usersPage.DeleteUser(Jan.email);
 
-            bool isDeleted = usersPage.IsUserDeleted(ania.email);
+            bool isDeleted = usersPage.IsUserDeleted(Jan.email);
             Assert.IsTrue(isDeleted, "User is still avaliable.");
         }
         [TestMethod]
@@ -110,7 +110,7 @@ namespace FrameworkBetony.Test
 
             var usersPage = new EditUserForm(driver, wait);
             usersPage.GoToUsers();
-            usersPage.EditUserPasswordByEmail("ania@gmail.pl");
+            usersPage.EditUserPasswordByEmail(Jan.email);
             usersPage.FillOutPassword(passwordUser);
 
             string expectedResult = "Hasło zostało zmienione";
