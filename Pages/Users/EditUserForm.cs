@@ -148,8 +148,8 @@ namespace FrameworkBetony.Pages
         }
         internal bool isUserEdited(string editQuery)
         {
-            IWebElement query = driver.FindElement(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + editQuery + "')]"));
-            if (!query.Displayed)
+            IWebElement query = wait.Until(ElementIsVisible(By.XPath("//*[@class='mat-row cdk-row ng-star-inserted']//td[@class = 'mat-cell cdk-cell cdk-column-email mat-column-email ng-star-inserted' and contains(text(),'" + editQuery + "')]")));
+            if (query.Displayed)
             {
                 return true;
             }
