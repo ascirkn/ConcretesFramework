@@ -18,8 +18,7 @@ namespace FrameworkBetony
         {
             this.driver = driver;
             this.wait = wait;
-
-        }
-
+            
+        } 
     }
 }

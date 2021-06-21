@@ -11,12 +11,12 @@ namespace FrameworkBetony.Pages
 {
     internal class LoginPage : BasePage
     {
-
+         
         public LoginPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait) { }
-
+         
         private IWebElement UsernameField => wait.Until(ElementIsVisible(By.Id("Username")));
-        private IWebElement PasswordField => driver.FindElement(By.Id("Password"));
-
+        private IWebElement PasswordField => wait.Until(ElementIsVisible(By.Id("Password")));
+        private IWebElement Error => wait.Until(ElementIsVisible(By.XPath("//*[@class='alert alert-danger']")));
         internal void SignUp(object myLogin, object myPassword)
         {
             throw new NotImplementedException();
@@ -36,6 +36,17 @@ namespace FrameworkBetony.Pages
         internal void GoTo()
         {
             driver.Navigate().GoToUrl("http://orders.devitmcode.pl");
+        }
+        internal bool IsErrorDisplayed()
+        {
+            if(Error.Displayed)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
