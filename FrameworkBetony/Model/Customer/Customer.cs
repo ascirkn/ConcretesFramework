@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrameworkBetony.Model.Customer
+namespace FrameworkBetony.Model
 {
     class Customer
     {
@@ -17,11 +17,6 @@ namespace FrameworkBetony.Model.Customer
         internal string number { get; set; }
         internal string merchantLimit { get; set; }
         public Person PersonType { get; set; }
-        public Product ProductType { get; set; }
-        internal string nameField { get; set; }
-        public Type TypeType { get; set; }
-        internal string Unit { get; set; }
-        internal string UnitPrice { get; set; }
-
+        internal string UniqueShortcut { get; set; }
     }
 }

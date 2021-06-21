@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FrameworkBetony.Model
+namespace FrameworkBetony.Model.Order
 {
-    enum Person
+    enum Merchandise
     {
-        Fizyczna,
-        Firma,
-        Murarz
+        Naturalne,
+        Piasek
     }
 }

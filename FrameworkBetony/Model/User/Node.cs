@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace FrameworkBetony.Model
 {
-    enum Person
+    enum Node
     {
-        Fizyczna,
-        Firma,
-        Murarz
+        BETONIARNIA,
+        BETONIARNIA2,
+        BETONIARNIA3,
+        ŻWIROWNIA,
+        ŻWIROWNIA2
     }
 }
